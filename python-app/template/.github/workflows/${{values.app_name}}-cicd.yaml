@@ -40,7 +40,9 @@ jobs:
       - name: Modify helm values file
         shell: bash
         run: |
-          sed -i "s/tag: .*/tag: ${{ '${{ needs.ci.outputs.commit_id }}' }}/" charts/${{values.app_name}}/values-${{values.app_env}}.yaml
+          echo "Commit ID: ${{ '${{ needs.ci.outputs.commit_id }}' }}"
+          sudo apt update && sudo apt install -y yq
+          yq -Yi '.image.tag = "${{ '${{needs.ci.outputs.commit_id}}' }}"' charts/${{values.app_name}}/values-${{values.app_env}}.yaml
 
       - name: Commit and push changes
         uses: EndBug/add-and-commit@v9
