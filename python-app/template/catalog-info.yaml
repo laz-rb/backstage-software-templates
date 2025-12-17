@@ -1,0 +1,15 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{values.app_name}}
+  description: Python app that displays the current date and time.
+  annotations:
+    github.com/project-slug: laz-rb/${{values.app_name}}
+    # Thec docs look for docs dir
+    backstage.io/techdocs-ref: dir:.
+  
+spec:
+  type: service
+  owner: development
+  lifecycle: experimental
