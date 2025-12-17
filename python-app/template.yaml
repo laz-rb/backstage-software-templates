@@ -43,7 +43,7 @@ spec:
       action: publish:github
       input:
         description: This is ${{ parameters.component_id }}
-        repoUrl: github.com?owner=laz-rb&repo=${{parameters.component_id}}
+        repoUrl: github.com?owner=lazrb-backstage&repo=${{parameters.component_id}}
         protectDefaultBranch: false
         repoVisibility: public
 
