@@ -5,7 +5,7 @@ metadata:
   name: ${{values.app_name}}
   description: Python app that displays the current date and time.
   annotations:
-    github.com/project-slug: laz-rb/${{values.app_name}}
+    github.com/project-slug: lazrb-backstage/${{values.app_name}}
     # Thec docs look for docs dir
     backstage.io/techdocs-ref: dir:.
   
